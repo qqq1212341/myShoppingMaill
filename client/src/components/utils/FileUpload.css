@@ -1,0 +1,46 @@
+.imageArea::-webkit-scrollbar {
+  height: 0.8vw;
+}
+
+.imageArea::-webkit-scrollbar-thumb {
+  background-color: rgba(196, 196, 196, 0.3);
+  border-radius: 100px;
+}
+
+.screen{
+  position: relative;
+  overflow: hidden;
+}
+
+.screen .bottom {
+  position: absolute;
+  display: grid;
+  top: 100%;
+  left: 37%;
+  z-index: 2;
+  font-size: 26px;
+  color: #fff;
+  transition: all .35s;
+}
+
+.screen:hover .bottom {
+  top: 52%;
+}
+
+.screen::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transition: all .35s;
+}
+
+.screenContainer:hover .screen::after {
+  opacity: 1;
+}
