@@ -18,6 +18,7 @@ function RightMenu(props) {
       }
     });
   };
+  
 
   if (user.userData && !user.userData.isAuth) {
     return (

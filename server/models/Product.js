@@ -21,8 +21,9 @@ const productSchema = mongoose.Schema({
     type: Array,
     default: []
   },
-  categori: {
-    type: String
+  clothesCategori: {
+    type: Number,
+    default: 0
   },
   sold: {
     type: Number,

@@ -1,0 +1,27 @@
+.ant-radio-group-outline{
+  width: 100%;
+}
+
+.ant-radio-button-wrapper {
+  width: 12%;
+  min-width: 100px;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
+  float: left;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+    background-color: rgb(212, 212, 212)
+}
+
+.ant-radio-button-checked{
+  border: rgb(212, 212, 212)
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  z-index: 1;
+  color: #1890ff;
+  background: #fff;
+  border-color: #d4d4d4;
+}

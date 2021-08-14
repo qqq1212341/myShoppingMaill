@@ -10,6 +10,10 @@ function LandingPage() {
                 <span style={{ fontSize: '2rem' }}>Let's Start Coding!</span>
             </div>
             <div style={{ float: 'right' }}>Thanks For Using This Boiler Plate by John Ahn</div>
+            <Image
+                width={200}
+                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            />
         </>
     )
 }

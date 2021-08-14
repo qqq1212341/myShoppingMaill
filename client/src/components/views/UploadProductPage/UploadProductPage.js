@@ -15,11 +15,10 @@ function UploadProductPage(props) {
         {key: 1, value:"Outer"},
         {key: 2, value:"Top"},
         {key: 3, value:"Bottom"},
-        {key: 4, value:"One Piece"},
-        {key: 5, value:"Bag"},
-        {key: 6, value:"Shoes"},
-        {key: 7, value:"Accessary"},
-        {key: 8, value:"Etc"},
+        {key: 4, value:"Bag"},
+        {key: 5, value:"Shoes"},
+        {key: 6, value:"Accessary"},
+        {key: 7, value:"Etc"},
     ]
 
     const [Title, setTitle] = useState("")
@@ -45,7 +44,9 @@ function UploadProductPage(props) {
     }
 
     const categoriChangeHandler = (e) => {
-        setCategori(CategoriArray[e-1].value)
+        console.log("hello")
+        console.log(e)
+        setCategori(CategoriArray[e-1].key)
     }
 
     // 하위 컴포넌트로부터 데이터를 받아옴
@@ -67,7 +68,7 @@ function UploadProductPage(props) {
             description: Description,
             price: Price,
             images: Image,
-            categori: Categori
+            clothesCategori: Categori
         }
         Axios.post('/api/product', body)
         .then(response=> {

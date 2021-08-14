@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Dropzone from 'react-dropzone';
 import './FileUpload.css';
 import {DeleteOutlined} from '@ant-design/icons';
+import { image_SERVER } from '../Config';
 
 function FileUpload(props) {
   // 나중에 시간되면 사진 여러개 upload 하는 것도 구현해보기, dropzone과 multer 건드려야함.
@@ -57,7 +58,7 @@ function FileUpload(props) {
               <div className={"bottom"}><DeleteOutlined />Delete</div>
               <img 
               style={{ minWidth:'300px', width: '300px', height:'200px'}}
-              src={`http://localhost:5000/${image}`}
+              src={image_SERVER+image}
               />
             </div>
           </div>
