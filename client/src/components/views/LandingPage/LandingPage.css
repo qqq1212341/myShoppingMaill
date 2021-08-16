@@ -1,0 +1,66 @@
+/* html {
+  scroll-snap-type: y mandatory;
+} */
+
+.scrollSnap {
+  scroll-snap-type: y mandatory;
+  overflow-y:scroll;
+  scroll-margin-top: 20px;
+}
+
+.imgContainer {
+  scroll-snap-align: start;
+  position: relative;
+  height: 94.6vh;
+  padding-bottom: 30px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.mainTitle {
+  position: absolute;
+  color: white;
+  font-family: LVTitle poloTitle !important;
+  font-size: 90px !important;
+  bottom: 100px;
+  right: 30px;
+}
+
+.img {
+  height: 100%;
+  bottom: 30px;
+  padding-left: 70px;
+  padding-right: 70px;
+  display: grid;
+  place-items: center;
+  object-fit: contain;
+}
+
+.containerBox1 {
+  position: absolute;
+  border: 2px solid white;
+  color: white;
+  font-family: LVTitle poloTitle !important;
+  display: grid;
+  place-content: center;
+  font-size: 16px;
+  height: 56px;
+  width: 260px;
+  right: 256px;
+  bottom: 50px;
+}
+
+.containerBox2 {
+  position: absolute;
+  background-color: white;
+  color: black;
+  font-family: LVTitle poloTitle !important;
+  display: grid;
+  place-content: center;
+  mix-blend-mode: screen;
+  font-size: 16px;
+  height: 56px;
+  width: 260px;
+  right: 545px;
+  bottom: 50px;
+}

@@ -1,0 +1,8 @@
+.inputBox {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid rgb(118, 118, 118);
+}
+.inputBox:focus {
+  outline: none;
+}

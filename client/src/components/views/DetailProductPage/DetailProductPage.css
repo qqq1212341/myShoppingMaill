@@ -1,0 +1,17 @@
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: NotoMedium;
+}
+.categori {
+  font-size: 15px;
+  color: rgb(165, 165, 165);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.price {
+  font-size: 32px;
+  font-family: NotoThin;
+}
+/* .image-gallery-image{
+  height: 300px;
+} */

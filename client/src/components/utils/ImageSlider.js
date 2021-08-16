@@ -21,7 +21,8 @@ function ImageSlider(props) {
           {props.images.map((image, index)=>
             <div key={index}>
               <img 
-              style={{width:'100%', maxHeight:'250px'}}
+
+              style={{width:'100%', maxHeight:'250px', objectFit:'contain'}}
               src={image_SERVER+image}/>
             </div>
           )}

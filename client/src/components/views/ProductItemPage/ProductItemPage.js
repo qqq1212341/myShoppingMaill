@@ -7,7 +7,6 @@ import {Card, Col, Row} from 'antd';
 import RadioBox from './Sections/RadioBox';
 import { CategoriArray, price } from './Sections/Datas';
 import PriceBox from './Sections/PriceBox';
-import Grid from 'antd/lib/card/Grid';
 import SearchFeature from './Sections/SearchFeature';
 const { Meta } = Card;
 
@@ -17,17 +16,19 @@ function ProductPage() {
   const [Products, setProducts] = useState([])
   const [Skip, setSkip] = useState(0)
   const [Limit, setLimit] = useState(8)
-  const [PostSize, setPostSize] = useState(0)
+  const [PostSize, setPostSize] = useState()
   const [Filters, setFilters] = useState({
     clothesCategori : [],
     price : []
   })
+  const [SearchTerm, setSearchTerm] = useState("")
 
   const getProduct = (body) => {
     Axios.post('/api/product/products', body)
     .then(response => {
       if (response.data.success){
-        if (body.loadMore = true){
+        if (body.loadMore === true){
+          console.log(body.loadMore)
           setProducts([...Products, ...response.data.productInfo])
         } else {
           setProducts(response.data.productInfo)
@@ -55,19 +56,20 @@ function ProductPage() {
     let scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
     let clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight === scrollHeight) {
-      // console.log(PostSize, Limit)
       buttonRef.current.click()
     }
   }
-
+  //loadmore
   const loadMoreHandler = () => {
     let skip = Skip + Limit
     let body = {
       skip: skip,
       limit: Limit,
-      loadMore: true
+      loadMore: true,
+      SearchTerm: SearchTerm
     }
     getProduct(body)
+    setSkip(skip)
   }
 
   const renderCard = Products.map((product, index) => {
@@ -76,12 +78,12 @@ function ProductPage() {
         style={{maxWidth:'300px'}}
         hoverable
         cover={
-        <ImageSlider images={product.images} />
+        <a href={`/product/item/${product._id}`}><ImageSlider images={product.images} /></a>
         }
       >
         <Meta 
           title={product.title}
-          description={`₩${product.price}`}
+          description={`₩${Number(product.price).toLocaleString()}`}
         />
       </Card>
     </Col>
@@ -95,21 +97,8 @@ function ProductPage() {
       filters: filters
     }
 
-    console.log(body)
-
-    Axios.post('/api/product/products', body)
-    .then(response => {
-      if (response.data.success){
-        if (body.loadMore = true){
-          setProducts(response.data.productInfo)
-        } else {
-          setProducts(response.data.productInfo)
-        }
-        setPostSize(response.data.postSize)
-      } else{
-        alert("상품 정보를 가져오는데 실패했습니다.")
-      }
-    })
+    getProduct(body)
+    setSkip(0)
   }
 
   const handleFilters = (filters, categori) => {
@@ -118,14 +107,26 @@ function ProductPage() {
     showFilteredResults(newFilters)
     setFilters(newFilters)
   }
-  console.log(Skip)
+
+  const updateSearchTerm = (newSearchTerm) => {
+    let body = {
+      skip: 0,
+      limit: Limit,
+      filters: Filters,
+      SearchTerm: newSearchTerm
+    }
+    setSkip(0)
+    setSearchTerm(newSearchTerm)
+    getProduct(body)
+  }
+  
   return (
     <div style={{width:'80%', margin:'3rem auto', marginTop:'0px'}}>
       {/* Filter */}
       {/* RadioBox */}
       <div style={{display:'grid', gridTemplateColumns:'5fr 1fr', marginBottom: '20px', marginTop: '20px'}}>
         <div></div>
-        <SearchFeature/>
+        <SearchFeature refreshFunction={searchValue => updateSearchTerm(searchValue)}/>
       </div>
       <div style={{display:'grid', gridTemplateColumns:'5fr 1fr'}}>
           <RadioBox list={CategoriArray} handleFilters={filters => handleFilters(filters, "clothesCategori")}/>

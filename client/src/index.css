@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -36,4 +38,50 @@ input.error {
   color: red;
   height: 5px;
   margin-top: -12px;
+}
+
+
+@font-face {
+  font-family: "title";
+  src: url("./font/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+  font-family: "disneyTitle";
+  src: url("./font/waltographUI.ttf");
+}
+
+@font-face {
+  font-family: "NotoThin";
+  src: url("./font/NotoSansKR-Thin.otf");
+}
+
+@font-face {
+  font-family: "NotoMedium";
+  src: url("./font/NotoSansKR-Medium.otf");
+}
+
+@font-face {
+  font-family: "NotoRegular";
+  src: url("./font/NotoSansKR-Regular.otf");
+}
+
+@font-face {
+  font-family: "movieTitle";
+  src: url("./font/MovieTitle_AH.ttf");
+}
+
+@font-face {
+  font-family: "basicTitle";
+  src: url("./font/basictitlefont.ttf");
+}
+
+@font-face {
+  font-family: "poloTitle";
+  src: url("./font/Abhaya Libre Medium.ttf");
+}
+
+@font-face {
+  font-family: "LVTitle";
+  src: url("./font/Louis Vuitton Font.ttf");
 }

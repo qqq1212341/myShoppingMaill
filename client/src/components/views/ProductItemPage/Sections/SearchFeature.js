@@ -1,14 +1,25 @@
-import React from 'react'
-import { Input } from 'antd';
-const { Search } = Input;
+import React, {useState} from 'react'
+import './SearchFeature.css'
 
-function SearchFeature() {
-  const onSearch = value => console.log(value);
+function SearchFeature(props) {
+  
+  const [InputValue, setInputValue] = useState("")
+
+  const valueChangeHandler = e => {
+    console.log(e.target.value)
+    setInputValue(e.target.value)
+    props.refreshFunction(e.target.value)
+  }
 
   return (
     <div>
-      <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }}  />
-
+      <input
+        className={'inputBox'}
+        type={'text'}
+        placeholder="Search.." 
+        onChange={valueChangeHandler}
+        value={InputValue}
+      />
     </div>
   )
 }

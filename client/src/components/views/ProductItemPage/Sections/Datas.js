@@ -13,7 +13,7 @@ export const CategoriArray = [
 export const price = [
   {
     "_id": 0,
-    "label": "Any",
+    "label": "All",
     "value": []
   },
   {

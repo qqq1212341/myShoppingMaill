@@ -4,8 +4,8 @@
   padding: 0 20px;
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  box-shadow: 0 0 10px #323232;
+  background-color: rgb(255, 255, 255);
   height: 50px;
   overflow: hidden;
 }
