@@ -1,9 +1,8 @@
-/* html {
+html {
   scroll-snap-type: y mandatory;
-} */
+}
 
 .scrollSnap {
-  scroll-snap-type: y mandatory;
   overflow-y:scroll;
   scroll-margin-top: 20px;
 }
@@ -11,7 +10,7 @@
 .imgContainer {
   scroll-snap-align: start;
   position: relative;
-  height: 94.6vh;
+  height: 94.7vh;
   padding-bottom: 30px;
   margin-left: 70px;
   margin-right: 70px;
@@ -22,6 +21,7 @@
   color: white;
   font-family: LVTitle poloTitle !important;
   font-size: 90px !important;
+  font-weight: 600;
   bottom: 100px;
   right: 30px;
 }

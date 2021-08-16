@@ -40,7 +40,7 @@
 
 .menu__container .menu_left {
   /* 계산식 = 50% - (로고 : 170) + (right container의 크기 / 2) */
-  width: calc(50% + 46.5px);
+  width: calc(50% + 78px);
   display: grid;
   justify-items: right;
   float: left;
@@ -93,3 +93,4 @@
     padding: 10px 20px;
   }
 }
+

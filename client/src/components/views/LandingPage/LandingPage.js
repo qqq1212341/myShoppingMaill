@@ -6,11 +6,11 @@ import useScrollSnap from 'react-use-scroll-snap';
 
 function LandingPage() {
   const scrollRef = useRef(null);
-  useScrollSnap({ ref: scrollRef, duration: 50, delay: 0 });
+  // useScrollSnap({ ref: scrollRef, duration: 50, delay: 0 });
 
   return (
     <>
-      <section ref={scrollRef} className={"scrollSnap"}>
+      <section ref={scrollRef} className={"scrollSnap"} style={{overflowX:'hidden'}}>
         <div className={"imgContainer"} style={{backgroundColor: 'rgb(21, 21, 21)'}}>
             <img className={"img"} src={'img/4.jpg'}></img>
             <div className={"mainTitle"}>WOMEN’S<br/> FALL-WINTER 2021</div>

@@ -3,10 +3,14 @@ import Axios from 'axios';
 import "./DetailProductPage.css"
 import { Button } from 'antd';
 import ProductImage from './ProductImage';
+import {useDispatch} from 'react-redux';
+import { addToCart } from '../../../_actions/user_actions';
 
 
 
 function DetailProductPage(props) {
+  //리덕스를 사용
+  const dispatch = useDispatch()
 
   const productId = props.match.params.productId
   const [Product, setProduct] = useState(0)
@@ -39,6 +43,12 @@ function DetailProductPage(props) {
     }
   }
 
+  const clickHandler = () => {
+    // 필요한 정보를 Cart 필드에다가 넣어준다
+    dispatch(addToCart(Product._id)) 
+
+  }
+
   return (
     <div style={{display:'grid', gridTemplateColumns:'2.5fr 1fr', padding:'2rem 4rem', paddingTop:'10px'}}>
       <div>
@@ -51,7 +61,7 @@ function DetailProductPage(props) {
         </div>
         <div className={"desc"}>{Product.description}</div>
         <div className={"price"}>{Number(Product.price).toLocaleString()} 원</div>
-        <Button>Add to Cart</Button>
+        <Button onClick={clickHandler}>Add to Cart</Button>
       </div>
     </div>
   )
