@@ -117,4 +117,20 @@ router.post("/addToCart", auth, (req, res) => {
         })
 });
 
+router.get("/removeFromCart", auth, (req, res) => {
+    //먼저 User Collection에 해당 유저 정보를 가져오기
+    console.log(req.query.id)
+    User.findOneAndUpdate(
+        {_id : req.user._id},
+        {
+            "$pull":
+                {"cart": {"id" : req.query.id}}
+        },
+        { new: true},
+        (err, userInfo) => {
+            res.status(200).json({userInfo})
+        }
+    )
+});
+
 module.exports = router;

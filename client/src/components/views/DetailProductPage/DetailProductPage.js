@@ -18,6 +18,7 @@ function DetailProductPage(props) {
     Axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
     .then(response => {
       if(response.data.success){
+        // console.log(`/api/product/products_by_id?id=${productId}&type=single`)
         setProduct(response.data.product[0])
       } else {
         alert('상세 정보를 가져오는데 실패했습니다.')

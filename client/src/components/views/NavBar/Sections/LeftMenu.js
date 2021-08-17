@@ -20,8 +20,8 @@ function LeftMenu(props) {
       <a href="/product/item"><ShoppingOutlined /></a>
     </Menu.Item>
     <Menu.Item key="Cart" style={{paddingLeft:'40px', paddingRight:'40px'}}>
-      <Badge count={5} size="small">
-        <a href="/user/cart"><ShoppingCartOutlined /></a>
+      <Badge count={3} size="small">
+        <a href="/user/cart" style={{marginRight:'-9px'}}><ShoppingCartOutlined /></a>
       </Badge>
     </Menu.Item>
     <Menu.Item key="More" style={{paddingLeft:'40px', paddingRight:'40px'}}>

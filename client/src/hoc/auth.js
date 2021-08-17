@@ -35,6 +35,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
         }, [])
 
         return (
+            // redux에서 각 컴포넌트의 props로 user의 데이터를 뿌림
             <SpecificComponent {...props} user={user} />
         )
     }
